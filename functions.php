@@ -171,6 +171,37 @@ function all_customizer_register($wp_customize)
         'label'   => __('Header Text Color', 'wpzone'),
         'section' => 'wpzone_header_area',
     ]));
+
+    /**-----------------------
+     *      Menu Position Option
+     *
+     *
+     *------------------------**/
+
+    $wp_customize->add_section('wpzone_menu_position', [
+        'title'       => __('Menu Position', 'wpzone'),
+        'description' => __('Customize the position of the main menu.', 'wpzone'),
+        'priority'    => 40,
+    ]);
+
+    $wp_customize->add_setting('wpzone_menu_position', [
+        'default'   => 'left_menu',
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control('wpzone_menu_position', [
+        'label'       => __('Menu Position', 'wpzone'),
+        'section'     => 'wpzone_menu_position',
+        'settings'    => 'wpzone_menu_position',
+        'description' => __('Select the position of the main menu.', 'wpzone'),
+        'type'        => 'radio',
+        'choices'     => [
+            'left_menu'   => __('Left', 'wpzone'),
+            'center_menu' => __('Center', 'wpzone'),
+            'right_menu'  => __('Right', 'wpzone'),
+        ],
+    ]);
+
 }
 add_action('customize_register', 'all_customizer_register');
 

@@ -58,10 +58,20 @@
                 <!-- Menu Container -->
                 <div class="collapse navbar-collapse" id="mainMenu">
                     <?php
+
+                        $menu_position = get_theme_mod('wpzone_menu_position', 'left_menu');
+
+                        $menu_class = 'navbar-nav ms-auto mb-2 mb-lg-0';
+                        if ($menu_position === 'left_menu') {
+                            $menu_class = 'navbar-nav me-auto mb-2 mb-lg-0';
+                        } elseif ($menu_position === 'center_menu') {
+                            $menu_class = 'navbar-nav mx-auto mb-2 mb-lg-0';
+                        }
+
                         wp_nav_menu([
                             'theme_location' => 'main_menu',
                             'container'      => false,
-                            'menu_class'     => 'navbar-nav ms-auto mb-2 mb-lg-0',
+                            'menu_class'     => $menu_class,
                             'fallback_cb'    => '__return_false',
                             'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                             'depth'          => 2,
