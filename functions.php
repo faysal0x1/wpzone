@@ -64,3 +64,17 @@ register_nav_menu('main_menu', __('Main Menu', 'wpzone'));
 
 // Call Bootstrap5 Nav Walker
 require_once get_template_directory() . '/inc/Bootstrap5_Nav_Walker.php';
+
+// Widget Registration
+require_once get_template_directory() . '/inc/widget_register.php';
+
+// Customizer Settings
+require_once get_template_directory() . '/inc/customizer.php';
+
+
+function wpzone_footer_layout_body_class($classes) {
+    $layout = get_theme_mod('footer_widgets_layout', '4');
+    $classes[] = 'footer-layout-' . $layout;
+    return $classes;
+}
+add_filter('body_class', 'wpzone_footer_layout_body_class');

@@ -82,5 +82,11 @@ function wp_zone_css_js_file_calling()
         . '/js/main.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('main-js');
 
+    // Customizer Js
+
+    wp_register_script('customizer-js', get_template_directory_uri()
+        . '/js/customizer.js', ['jquery'], '1.0.0', true);
+    wp_enqueue_script('customizer-js');
+
 }
 add_action('wp_enqueue_scripts', 'wp_zone_css_js_file_calling');

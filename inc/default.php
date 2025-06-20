@@ -76,15 +76,3 @@ function wpzone_pagenav() {
     echo $pagination;
 }
 
-
-function wpzone_register_sidebar()
-{
-    register_sidebar([
-        'name'          => __('Home Sidebar', 'wpzone'),
-        'id'            => 'home-sidebar',
-        'before_widget' => '<div class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ]);
-}
