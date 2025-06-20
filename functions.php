@@ -88,3 +88,82 @@ function wp_zone_css_js_file_calling()
 }
 
 add_action('wp_enqueue_scripts', 'wp_zone_css_js_file_calling');
+
+// Theme Support
+function wp_zone_theme_support()
+{
+    // Add support for post thumbnails
+    add_theme_support('post-thumbnails');
+
+    // Add support for custom logo
+    add_theme_support('custom-logo', [
+        'height'      => 100,
+        'width'       => 100,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ]);
+
+    // Add support for HTML5 markup
+    add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
+}
+add_action('after_setup_theme', 'wp_zone_theme_support');
+
+// Theme functions
+
+function all_customizer_register($wp_customize)
+{
+    // Add a section for the header area
+    $wp_customize->add_section('wpzone_header_area', [
+        'title'       => __('Header Area', 'wpzone'),
+        'description' => __('Customize the header area of your site.', 'wpzone'),
+        'priority'    => 30,
+    ]);
+
+    // Add Logo to Header Area section
+    $wp_customize->add_setting('wpzone_logo', [
+        'default'   => get_bloginfo('template_directory') . '/img/logo.png',
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'wpzone_logo', [
+        'label'       => __('Logo', 'wpzone'),
+        'description' => __('Upload a logo for your site.', 'wpzone'),
+        'priority'    => 10,
+        'section'     => 'wpzone_header_area', // Changed from 'title_tagline' to 'wpzone_header_area'
+        'settings'    => 'wpzone_logo',
+    ]));
+
+    // Add settings and controls for the header area
+    $wp_customize->add_setting('wpzone_header_text', [
+        'default'   => __('Welcome to WPZone', 'wpzone'),
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control('wpzone_header_text', [
+        'label'   => __('Header Text', 'wpzone'),
+        'section' => 'wpzone_header_area',
+        'type'    => 'text',
+    ]);
+
+    $wp_customize->add_setting('wpzone_header_background_color', [
+        'default'   => '#ffffff',
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'wpzone_header_background_color', [
+        'label'   => __('Header Background Color', 'wpzone'),
+        'section' => 'wpzone_header_area',
+    ]));
+
+    $wp_customize->add_setting('wpzone_header_text_color', [
+        'default'   => '#000000',
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'wpzone_header_text_color', [
+        'label'   => __('Header Text Color', 'wpzone'),
+        'section' => 'wpzone_header_area',
+    ]));
+}
+
+add_action('customize_register', 'all_customizer_register');
