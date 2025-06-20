@@ -86,8 +86,15 @@ function wp_zone_css_js_file_calling()
     wp_enqueue_script('main-js');
 
 }
-
 add_action('wp_enqueue_scripts', 'wp_zone_css_js_file_calling');
+
+// Google Fonts Enqueue
+function wp_zone_google_fonts()
+{
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap', false);
+}
+
+add_action('wp_enqueue_scripts', 'wp_zone_google_fonts');
 
 // Theme Support
 function wp_zone_theme_support()
@@ -165,5 +172,20 @@ function all_customizer_register($wp_customize)
         'section' => 'wpzone_header_area',
     ]));
 }
-
 add_action('customize_register', 'all_customizer_register');
+
+// Menu Registration
+
+// function wp_zone_register_menus()
+// {
+//     register_nav_menus([
+//         'primary' => __('Primary Menu', 'wpzone'),
+//         'footer'  => __('Footer Menu', 'wpzone'),
+//     ]);
+// }
+// add_action('init', 'wp_zone_register_menus');
+
+register_nav_menu('main_menu', __('Main Menu', 'wpzone'));
+
+// Call Bootstrap5 Nav Walker
+require_once get_template_directory() . '/Bootstrap5_Nav_Walker.php';

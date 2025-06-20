@@ -124,3 +124,59 @@
 
 // })(jQuery);
 
+
+
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Bootstrap dropdowns properly
+    const dropdowns = document.querySelectorAll('.dropdown-toggle');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (e) {
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                const menu = this.nextElementSibling;
+
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                    if (openMenu !== menu) {
+                        openMenu.classList.remove('show');
+                    }
+                });
+
+                // Toggle current dropdown
+                menu.classList.toggle('show');
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!e.target.matches('.dropdown-toggle')) {
+            document.querySelectorAll('.dropdown-menu.show').forEach(function (menu) {
+                menu.classList.remove('show');
+            });
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                    document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    });
+});

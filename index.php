@@ -23,26 +23,11 @@
 
 <body      <?php body_class(); ?>>
 
-    <div class="container-fluid bg-white p-0 my-6" style=" margin-top: 41px;">
-        <nav class=" navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5"
-            data-wow-delay="0.1s">
-            <a href="index.html" class="navbar-brand d-block d-lg-none">
-                <h1 class="text-primary fw-bold m-0">ProMan</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="#home" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
-                    <a href="#skill" class="nav-item nav-link">Skills</a>
-                    <a href="#service" class="nav-item nav-link">Services</a>
-                </div>
-                <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
-                </a>
-
-                <div class="logo w-auto d-lg-block d-none">
+    <div class="container-fluid bg-white p-0" style="margin-top: 41px;">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5">
+            <div class="container">
+                <!-- Logo - shown on both mobile and desktop -->
+                <div class="logo">
                     <?php
                         $logo_url = get_theme_mod('wpzone_logo', get_template_directory_uri() . '/img/logo.png');
                         $logo_alt = '';
@@ -60,21 +45,33 @@
                             $logo_alt = get_bloginfo('name') . ' Logo';
                         }
                     ?>
-
-                    <img class="img-fluid w-25 h-25" src="<?php echo esc_url($logo_url); ?>"
-                        alt="<?php echo esc_attr($logo_alt); ?>">
+                    <img class="img-fluid" src="<?php echo esc_url($logo_url); ?>"
+                        alt="<?php echo esc_attr($logo_alt); ?>" style="max-height: 50px;">
                 </div>
 
-                <div class="navbar-nav me-auto py-0">
-                    <a href="#project" class="nav-item nav-link">Projects</a>
-                    <a href="#team" class="nav-item nav-link">Team</a>
-                    <a href="#testimonial" class="nav-item nav-link">Testimonial</a>
-                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                <!-- Hamburger menu button - shown only on mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu Container -->
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <?php
+                        wp_nav_menu([
+                            'theme_location' => 'main_menu',
+                            'container'      => false,
+                            'menu_class'     => 'navbar-nav ms-auto mb-2 mb-lg-0',
+                            'fallback_cb'    => '__return_false',
+                            'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            'depth'          => 2,
+                            'walker'         => new Bootstrap5_Nav_Walker(),
+                        ]);
+                    ?>
                 </div>
             </div>
         </nav>
     </div>
-
 
     <!-- Header Start -->
     <div class="container-fluid bg-light my-6 mt-0" id="home">
