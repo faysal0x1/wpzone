@@ -38,21 +38,6 @@
 
 <!-- Body Area --->
 
-<section id="body-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <?php
-                    // Display the main content of the page
-                    // while (have_posts()): the_post();
-                    the_content();
-                    // endwhile;
-
-                ?>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Body Area End --->
 

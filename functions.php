@@ -9,6 +9,11 @@
 // Theme Title
 add_theme_support('title-tag');
 
+/**
+ * Load theme helper functions
+ */
+require_once get_template_directory() . '/inc/helpers.php';
+
 // Theme Css and Jquery Js file calling
 
 function wp_zone_css_js_file_calling()
