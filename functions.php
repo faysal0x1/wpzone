@@ -202,6 +202,31 @@ function all_customizer_register($wp_customize)
         ],
     ]);
 
+    /**-----------------------
+     *  Footer Customization
+     *  
+     *  
+     *------------------------**/
+
+    $wp_customize->add_section('wpzone_footer_option', [
+        'title'       => __('Footer Options', 'wpzone'),
+        'description' => __('Customize the footer area', 'wpzone'),
+        'priority'    => 120,
+    ]);
+
+    $wp_customize->add_setting('wpzone_copyright_section', [
+        'default'   => '&copy; Copyright 2025 | Faysal Rahman',
+        'transport' => 'refresh', // Added transport
+    ]);
+
+    $wp_customize->add_control('wpzone_copyright_section', [
+        'label'       => 'Copyright Text',
+        'description' => 'If you need you can update the copyright section',
+        'section'     => 'wpzone_footer_option',
+        'setting'     => 'wpzone_copyright_section',
+        'type'        => 'text',
+    ]);
+
 }
 add_action('customize_register', 'all_customizer_register');
 
