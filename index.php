@@ -1,6 +1,6 @@
 <?php
-/* * Template Name: Home Page
- * Description: A custom template for the home page.
+/* * Template Name: Archive Page
+ * Description: A custom template for the archive page.
  * */
 
 get_header();
@@ -13,20 +13,20 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+
+
 <?php get_template_part('template_part/blog_setup') ?>
             </div>
             <div class="col-md-3">
                 <h1>This iS Sidebar</h1>
-                <?php
-                    get_sidebar();
-?>
+                <?php  get_sidebar();?>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Body Area End --->
-
+    
 
 <!-- Footer Start -->
 
