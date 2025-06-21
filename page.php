@@ -1,5 +1,5 @@
 <?php
-/* * Template Name: Home Page
+/* * Template Name: Displaying Pa
  * Description: A custom template for the home page.
  * */
 
@@ -13,13 +13,11 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-<?php get_template_part('template_part/blog_setup') ?>
+               <?php get_template_part('template_part/post_setup') ?>
             </div>
             <div class="col-md-3">
                 <h1>This iS Sidebar</h1>
-                <?php
-                    get_sidebar();
-?>
+                <?php get_sidebar(); ?>
             </div>
         </div>
     </div>
