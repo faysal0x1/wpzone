@@ -15,7 +15,7 @@ get_header();
             <div class="col-md-8">
 
 
-<?php get_template_part('template_part/blog_setup') ?>
+                <?php get_template_part('template_part/blog_setup') ?>
             </div>
             <div class="col-md-3">
                 <h1>This iS Sidebar</h1>
@@ -26,7 +26,7 @@ get_header();
 </section>
 
 <!-- Body Area End --->
-    
+
 
 <!-- Footer Start -->
 

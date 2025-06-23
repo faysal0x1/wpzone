@@ -1,0 +1,26 @@
+{
+    "name": "wpzone-theme",
+    "version": "1.0.0",
+    "description": "WordPress theme with custom Bootstrap SCSS",
+    "main": "index.js",
+    "scripts": {
+        "build": "sass scss/main.scss:css/bootstrap-custom.css --style compressed --load-path=node_modules --quiet-deps",
+        "watch": "sass scss/main.scss:css/bootstrap-custom.css --watch --load-path=node_modules --quiet-deps",
+        "dev": "sass scss/main.scss:css/bootstrap-custom.css --watch --style expanded --load-path=node_modules --quiet-deps",
+        "clean": "rm -rf css/bootstrap-custom.css css/bootstrap-custom.css.map"
+    },
+    "keywords": [
+        "wordpress",
+        "theme",
+        "bootstrap",
+        "scss"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.69.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.7"
+    }
+}

@@ -1,0 +1,127 @@
+@use "sass:color";
+@use "variables" as themeVars;
+@use "mixins" as *;
+
+// Header styles
+.site-header {
+  .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    
+    &.scrolled {
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand-wrapper {
+      .navbar-brand {
+        font-weight: 700;
+        color: themeVars.$primary !important;
+        font-size: 1.5rem;
+        
+        img {
+          max-height: 40px;
+          width: auto;
+        }
+      }
+    }
+    
+    .navbar-nav {
+      .nav-link {
+        font-weight: 600;
+        color: themeVars.$dark !important;
+        margin: 0 0.5rem;
+        padding: 0.5rem 1rem !important;
+        border-radius: themeVars.$border-radius;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &:hover {
+          color: themeVars.$primary !important;
+          background: rgba(themeVars.$primary, 0.1);
+        }
+        
+        &.active {
+          color: themeVars.$primary !important;
+          background: rgba(themeVars.$primary, 0.1);
+        }
+      }
+      
+      .dropdown-menu {
+        border: none;
+        box-shadow: themeVars.$box-shadow;
+        border-radius: themeVars.$border-radius;
+        padding: 0.5rem 0;
+        
+        .dropdown-item {
+          padding: 0.75rem 1.5rem;
+          color: themeVars.$dark;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba(themeVars.$primary, 0.1);
+            color: themeVars.$primary;
+          }
+        }
+      }
+    }
+    
+    .navbar-toggler {
+      border: none;
+      padding: 0.25rem 0.5rem;
+      
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Main content wrapper
+.site-main {
+  padding-top: 80px; // Account for fixed header
+  min-height: calc(100vh - 80px);
+}
+
+// Search modal
+#searchModal {
+  .modal-content {
+    border: none;
+    border-radius: themeVars.$border-radius;
+    box-shadow: themeVars.$box-shadow-lg;
+  }
+  
+  .modal-header {
+    background: themeVars.$primary;
+    color: themeVars.$dark;
+    border-radius: themeVars.$border-radius themeVars.$border-radius 0 0;
+    
+    .btn-close {
+      filter: invert(1);
+    }
+  }
+}
+
+// Responsive header adjustments
+@media (max-width: 768px) {
+  .site-header {
+    .navbar {
+      padding: 0.5rem 0;
+      
+      .navbar-nav {
+        padding: 1rem 0;
+        
+        .nav-link {
+          margin: 0.25rem 0;
+          padding: 0.75rem 1rem !important;
+        }
+      }
+    }
+  }
+  
+  .site-main {
+    padding-top: 70px;
+  }
+} 

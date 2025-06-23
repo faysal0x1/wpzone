@@ -14,17 +14,6 @@
    Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready
 */
 /* Main Menu Styling */
-
-
-/* Navbar Base Styles */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {}
-
 a,
 a:hover,
 a:focus,
@@ -291,58 +280,58 @@ body {
 
 /* Footer Styles */
 .site-footer {
-    padding: 40px 0 20px;
+   padding: 40px 0 20px;
 }
 
 .footer-widget-area {
-    margin-bottom: 1.5rem;
+   margin-bottom: 1.5rem;
 }
 
 .footer-widget-title {
-    color: inherit;
-    margin-bottom: 1.25rem;
-    font-size: 1.125rem;
-    font-weight: 600;
+   color: inherit;
+   margin-bottom: 1.25rem;
+   font-size: 1.125rem;
+   font-weight: 600;
 }
 
 .site-info {
-    font-size: 0.875rem;
-    opacity: 0.8;
+   font-size: 0.875rem;
+   opacity: 0.8;
 }
 
 /* Widget List Styles */
 .footer-widget-area ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
+   list-style: none;
+   padding-left: 0;
+   margin: 0;
 }
 
 .footer-widget-area ul li {
-    margin-bottom: 0.5rem;
+   margin-bottom: 0.5rem;
 }
 
 .footer-widget-area ul li a {
-    color: inherit;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+   color: inherit;
+   text-decoration: none;
+   opacity: 0.8;
+   transition: opacity 0.3s ease;
 }
 
 .footer-widget-area ul li a:hover {
-    opacity: 1;
+   opacity: 1;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-    .footer-widget-area {
-        margin-bottom: 2rem;
-    }
+   .footer-widget-area {
+      margin-bottom: 2rem;
+   }
 }
 
 @media (max-width: 768px) {
-    .site-footer {
-        padding: 30px 0 15px;
-    }
+   .site-footer {
+      padding: 30px 0 15px;
+   }
 }
 
 /*=====================================
@@ -350,136 +339,136 @@ body {
 ========================================*/
 
 .comments-area {
-    margin-top: 40px;
+   margin-top: 40px;
 }
 
 .comments-area h2.comments-title {
-    font-size: 25px;
-    margin-bottom: 20px;
+   font-size: 25px;
+   margin-bottom: 20px;
 }
 
 .comment-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+   margin: 0;
+   padding: 0;
+   list-style: none;
 }
 
 .comment-meta {
-    margin-bottom: 20px;
+   margin-bottom: 20px;
 }
 
 .comment-meta a {
-    color: #333;
+   color: #333;
 }
 
 .comment-meta img {}
 
 .comment-author.vcard {
-    position: relative;
-    padding-left: 50px;
+   position: relative;
+   padding-left: 50px;
 }
 
 .comment-author.vcard img {
-    position: absolute;
-    left: 0;
-    top: 5px;
+   position: absolute;
+   left: 0;
+   top: 5px;
 }
 
 .comment-metadata {
-    margin-left: 50px;
+   margin-left: 50px;
 }
 
 .comments-area table {
-    border-left: 1px solid #dddd;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 20px;
+   border-left: 1px solid #dddd;
+   border-bottom: 1px solid #ddd;
+   margin-bottom: 20px;
 }
 
 .comments-area table td,
 .comments-area table th {
-    border-right: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    padding: 10px;
+   border-right: 1px solid #ddd;
+   border-top: 1px solid #ddd;
+   padding: 10px;
 }
 
 .comments-area th {
-    background: #278cc1;
-    color: #fff;
+   background: #278cc1;
+   color: #fff;
 }
 
 .comments-area dd {
-    margin-bottom: 15px;
+   margin-bottom: 15px;
 }
 
 .comments-area .comments-content ul,
 .comments-area .comments-content ol {
-    padding-left: 15px;
+   padding-left: 15px;
 }
 
 .comments-area .comment-content ul,
 .comments-area .comment-content ol {
-    padding-left: 15px;
+   padding-left: 15px;
 }
 
 .comment-reply-link {
-    background: #1e71f9;
-    display: inline-block;
-    padding: 5px 20px;
-    color: #fff;
-    border-radius: 5px;
+   background: #1e71f9;
+   display: inline-block;
+   padding: 5px 20px;
+   color: #fff;
+   border-radius: 5px;
 }
 
 .comment-list li.comment {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
+   margin-bottom: 30px;
+   border-bottom: 1px solid #ddd;
+   padding-bottom: 30px;
 }
 
 .comment-metadata {
-    font-size: 80%;
+   font-size: 80%;
 }
 
 .comment-reply-link {
-    margin-top: 10px;
+   margin-top: 10px;
 }
 
 .comment-list li ol.children {
-    padding-left: 50px;
-    margin: 0;
-    list-style: none;
-    margin-top: 25px;
+   padding-left: 50px;
+   margin: 0;
+   list-style: none;
+   margin-top: 25px;
 }
 
 .comment-list li ol.children ol.children {
-    padding-left: 20px;
+   padding-left: 20px;
 }
 
 .comment-list li.comment:last-child {
-    border-bottom: 0px solid;
-    padding-bottom: 0;
-    margin-bottom: 0;
+   border-bottom: 0px solid;
+   padding-bottom: 0;
+   margin-bottom: 0;
 }
 
 .comment-respond {
-    margin-top: 50px;
+   margin-top: 50px;
 }
 
 .comment-notes {
-    font-size: 90%;
-    margin-bottom: 40px;
+   font-size: 90%;
+   margin-bottom: 40px;
 }
 
 .comment-form label {
-    display: block;
-    margin-bottom: 10px;
+   display: block;
+   margin-bottom: 10px;
 }
 
 .comment-form input,
 .comment-form textarea {
-    width: 100%;
-    margin-bottom: 20px;
+   width: 100%;
+   margin-bottom: 20px;
 }
 
 .comment-form input[type=submit] {
-    width: auto;
+   width: auto;
 }

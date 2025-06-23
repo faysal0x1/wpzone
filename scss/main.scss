@@ -1,0 +1,153 @@
+// Import Bootstrap from node_modules
+@use "bootstrap/scss/bootstrap" as *;
+
+// Import theme variables and mixins first
+@use "theme/variables" as themeVars;
+@use "theme/mixins" as *;
+@use "theme/utilities" as *;
+
+// Import modular component styles
+@use "theme/layout" as *;
+@use "theme/header" as *;
+@use "theme/footer" as *;
+@use "theme/blog" as *;
+@use "theme/widgets" as *;
+@use "theme/pages" as *;
+@use "theme/components" as *;
+
+// Custom theme styles
+body {
+  font-family: themeVars.$font-family-base;
+  line-height: themeVars.$line-height-base;
+  color: themeVars.$body-color;
+  background-color: themeVars.$body-bg;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: themeVars.$headings-font-weight;
+  line-height: themeVars.$headings-line-height;
+  color: themeVars.$headings-color;
+  margin-bottom: themeVars.$headings-margin-bottom;
+}
+
+h1 { font-size: themeVars.$h1-font-size; }
+h2 { font-size: themeVars.$h2-font-size; }
+h3 { font-size: themeVars.$h3-font-size; }
+h4 { font-size: themeVars.$h4-font-size; }
+h5 { font-size: themeVars.$h5-font-size; }
+h6 { font-size: themeVars.$h6-font-size; }
+
+p {
+  margin-bottom: themeVars.$paragraph-margin-bottom;
+}
+
+a {
+  color: themeVars.$link-color;
+  text-decoration: themeVars.$link-decoration;
+  transition: themeVars.$link-transition;
+  
+  &:hover {
+    color: themeVars.$link-hover-color;
+    text-decoration: themeVars.$link-hover-decoration;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Lists
+ul, ol {
+  padding-left: themeVars.$list-padding-left;
+  margin-bottom: themeVars.$list-margin-bottom;
+}
+
+li {
+  margin-bottom: themeVars.$list-item-margin-bottom;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid themeVars.$primary;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: themeVars.$text-muted;
+}
+
+// Code
+code {
+  background: rgba(themeVars.$primary, 0.1);
+  color: themeVars.$primary;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: themeVars.$dark;
+  color: white;
+  padding: 1rem;
+  border-radius: themeVars.$border-radius;
+  overflow-x: auto;
+  margin: 1rem 0;
+  
+  code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid themeVars.$border-color;
+    text-align: left;
+  }
+  
+  th {
+    background: rgba(themeVars.$primary, 0.1);
+    font-weight: 600;
+  }
+}
+
+// Form elements
+input, textarea, select {
+  font-family: inherit;
+}
+
+// Focus states
+*:focus {
+  outline: none;
+}
+
+.form-control:focus,
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(themeVars.$primary, 0.25);
+}
+
+// Print styles
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+} 
