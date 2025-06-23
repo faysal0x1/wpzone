@@ -1,0 +1,290 @@
+@use "sass:color";
+@use "variables" as themeVars;
+@use "mixins" as *;
+
+// Footer styles
+.site-footer {
+  background: themeVars.$dark;
+  color: white;
+  position: relative;
+  
+  .footer-main {
+    .footer-widget {
+      margin-bottom: 2rem;
+      
+      .footer-logo {
+        .navbar-brand {
+          color: white !important;
+          font-size: 1.5rem;
+          
+          img {
+            max-height: 40px;
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+      
+      h4, h5 {
+        color: themeVars.$secondary;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -0.5rem;
+          left: 0;
+          width: 50px;
+          height: 2px;
+          background: themeVars.$secondary;
+        }
+      }
+      
+      .footer-links {
+        li {
+          margin-bottom: 0.75rem;
+          
+          a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            
+            &:hover {
+              color: themeVars.$secondary;
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+      
+      .social-links {
+        .social-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          border-radius: 50%;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: themeVars.$secondary;
+            color: themeVars.$dark;
+            transform: translateY(-3px);
+          }
+          
+          i {
+            font-size: 1.1rem;
+          }
+        }
+      }
+      
+      .contact-info {
+        .contact-item {
+          i {
+            font-size: 1.1rem;
+          }
+          
+          a {
+            transition: color 0.3s ease;
+            
+            &:hover {
+              color: themeVars.$secondary !important;
+            }
+          }
+        }
+      }
+
+      // Widget area specific styles
+      .widget {
+        margin-bottom: 1.5rem;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        .widget-title {
+          color: themeVars.$secondary;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          position: relative;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: themeVars.$secondary;
+          }
+        }
+        
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          
+          li {
+            margin-bottom: 0.5rem;
+            
+            a {
+              color: rgba(255, 255, 255, 0.8);
+              text-decoration: none;
+              transition: all 0.3s ease;
+              
+              &:hover {
+                color: themeVars.$secondary;
+                padding-left: 5px;
+              }
+            }
+          }
+        }
+        
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 1.6;
+        }
+        
+        // Text widget specific styles
+        &.widget_text {
+          .textwidget {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+          }
+        }
+        
+        // Recent posts widget
+        &.widget_recent_entries {
+          ul {
+            li {
+              padding: 0.5rem 0;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+              
+              &:last-child {
+                border-bottom: none;
+              }
+              
+              a {
+                font-weight: 500;
+                
+                &:hover {
+                  color: themeVars.$secondary;
+                }
+              }
+              
+              .post-date {
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.6);
+                display: block;
+                margin-top: 0.25rem;
+              }
+            }
+          }
+        }
+        
+        // Categories widget
+        &.widget_categories {
+          ul {
+            li {
+              a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                &::after {
+                  content: attr(data-count);
+                  background: rgba(themeVars.$secondary, 0.2);
+                  color: themeVars.$secondary;
+                  padding: 0.2rem 0.5rem;
+                  border-radius: 10px;
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    
+    .footer-bottom-links {
+      a {
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: themeVars.$secondary !important;
+        }
+      }
+    }
+  }
+}
+
+// Back to top button
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: color.adjust(themeVars.$primary, $lightness: -10%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: themeVars.$box-shadow;
+  
+  &:hover {
+    background: color.adjust(themeVars.$primary, $lightness: -10%);
+    transform: translateY(-3px);
+    box-shadow: themeVars.$box-shadow-lg;
+  }
+  
+  i {
+    font-size: 1.2rem;
+  }
+  
+  &.show {
+    display: flex;
+  }
+}
+
+// Responsive footer adjustments
+@media (max-width: 768px) {
+  .site-footer {
+    .footer-main {
+      .footer-widget {
+        text-align: center;
+        
+        h4::after, h5::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    
+    .footer-bottom {
+      .row {
+        text-align: center;
+        
+        .col-md-6:first-child {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+} 

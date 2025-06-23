@@ -22,22 +22,23 @@
 
 <body <?php body_class(); ?>>
 
-    <!-- Header Start --->
-    <header class="container-fluid bg-white p-0" style="margin-top: 41px;">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5">
+    <!-- Header Start -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNavbar">
             <div class="container">
-                <!-- Logo - shown on both mobile and desktop -->
-                <div class="logo">
+                <!-- Logo -->
+                <div class="navbar-brand-wrapper">
                     <?php echo wpzone_get_logo(); ?>
                 </div>
 
-                <!-- Hamburger menu button - shown only on mobile -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-                    aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Menu Container -->
+                <!-- Navigation Menu -->
                 <div class="collapse navbar-collapse" id="mainMenu">
                     <?php
                         $menu_position = get_theme_mod('wpzone_menu_position', 'left_menu');
@@ -59,8 +60,42 @@
                             'walker'         => new Bootstrap5_Nav_Walker(),
                         ]);
                     ?>
+
+                    <!-- Search Button (Optional) -->
+                    <div class="navbar-nav ms-auto">
+                        <button class="btn btn-outline-primary btn-sm ms-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#searchModal">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
     <!-- Header End -->
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                        <div class="input-group">
+                            <input type="search" class="form-control form-control-lg" placeholder="Search..."
+                                value="<?php echo get_search_query(); ?>" name="s" required>
+                            <button class="btn btn-primary" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content Wrapper -->
+    <main class="site-main">

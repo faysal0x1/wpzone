@@ -1,0 +1,167 @@
+@use "sass:color";
+@use "variables" as themeVars;
+
+// Custom utility classes
+
+// Background utilities
+.bg-gradient-primary {
+  background: linear-gradient(135deg, themeVars.$primary, color.adjust(themeVars.$primary, $lightness: -10%));
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, themeVars.$secondary, color.adjust(themeVars.$secondary, $lightness: -10%));
+}
+
+// Text utilities
+.text-gradient {
+  background: linear-gradient(135deg, themeVars.$primary, themeVars.$secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Border utilities
+.border-gradient {
+  border: 2px solid;
+  border-image: linear-gradient(135deg, themeVars.$primary, themeVars.$secondary) 1;
+}
+
+// Shadow utilities
+.shadow-custom {
+  box-shadow: 0 10px 30px rgba(themeVars.$primary, 0.2);
+}
+
+.shadow-custom-lg {
+  box-shadow: 0 20px 60px rgba(themeVars.$primary, 0.3);
+}
+
+// Spacing utilities
+.gap-0 { gap: 0 !important; }
+.gap-1 { gap: 0.25rem !important; }
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 1rem !important; }
+.gap-4 { gap: 1.5rem !important; }
+.gap-5 { gap: 3rem !important; }
+
+// Position utilities
+.position-sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+// Animation utilities
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Hover effects
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: themeVars.$box-shadow-lg;
+  }
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Focus utilities
+.focus-ring {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(themeVars.$primary, 0.25);
+  }
+}
+
+// Aspect ratio utilities
+.aspect-ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+// Object fit utilities
+.object-cover {
+  object-fit: cover;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-fill {
+  object-fit: fill;
+}
+
+// Backdrop utilities
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(20px);
+}
+
+// Glass effect
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Gradient text
+.gradient-text-primary {
+  background: linear-gradient(135deg, themeVars.$primary, color.adjust(themeVars.$primary, $lightness: 20%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-secondary {
+  background: linear-gradient(135deg, themeVars.$secondary, color.adjust(themeVars.$secondary, $lightness: 20%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+} 
