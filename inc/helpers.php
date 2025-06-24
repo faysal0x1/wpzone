@@ -29,12 +29,11 @@
                 $logo_alt = get_bloginfo('name') . ' Logo';
             }
 
-            ob_start();
-        ?>
-<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
-    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($logo_alt); ?>" class="img-fluid">
-</a>
-<?php
-    return ob_get_clean();
+            ob_start(); ?>
+            <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
+                <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($logo_alt); ?>" class="img-fluid">
+            </a>
+            <?php
+                return ob_get_clean();
     }
 }

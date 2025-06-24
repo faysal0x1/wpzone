@@ -11,6 +11,7 @@ add_theme_support('title-tag');
 add_theme_support('post-thumbnails', [
     'post',
     'page',
+    'wpzone_service'
 ]);
 
 add_image_size('post-thumbnails', 970, 350, true);

@@ -53,7 +53,7 @@ require_once get_template_directory() . '/inc/theme_functions.php';
 function wp_zone_register_menus()
 {
     register_nav_menus([
-        'main_menu' => __('Main Menu', 'wpzone'),
+        'main_menu'   => __('Main Menu', 'wpzone'),
         'footer_menu' => __('Footer Menu', 'wpzone'),
     ]);
 }
@@ -68,10 +68,14 @@ require_once get_template_directory() . '/inc/widget_register.php';
 // Customizer Settings
 require_once get_template_directory() . '/inc/customizer.php';
 
+require_once get_template_directory() . '/inc/custom_post.php';
 
-function wpzone_footer_layout_body_class($classes) {
-    $layout = get_theme_mod('footer_widgets_layout', '4');
+function wpzone_footer_layout_body_class($classes)
+{
+    $layout    = get_theme_mod('footer_widgets_layout', '4');
     $classes[] = 'footer-layout-' . $layout;
     return $classes;
+    
+    
 }
 add_filter('body_class', 'wpzone_footer_layout_body_class');
