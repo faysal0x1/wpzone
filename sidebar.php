@@ -3,7 +3,7 @@
     /**
      * Sidebar Template
      *
-     * @package wpzone
+     * @package creativezone
      */
 
     if (! defined('ABSPATH')) {

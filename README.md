@@ -1,4 +1,4 @@
-# WPZone Theme - Custom Bootstrap SCSS Setup
+# CreativeZone Theme - Custom Bootstrap SCSS Setup
 
 This WordPress theme now uses a custom SCSS workflow to customize Bootstrap instead of using the direct Bootstrap CSS file. The theme has been optimized by removing unused CSS and JavaScript libraries and includes modern, responsive header, footer, and 404 page designs.
 

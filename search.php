@@ -14,13 +14,13 @@ get_header();
         <div class="row">
             <div class="md-12">
                 <div class="search-title">
-                    <h1><?php printf(__('Search Results for: %s', 'wpzone'), get_search_query()); ?></h1>
-         
+                    <h1><?php printf(__('Search Results for: %s', 'creativezone'), get_search_query()); ?></h1>
+
                 </div>
             </div>
             <div class="col-md-8">
 
-<?php get_template_part('template_part/blog_setup') ?>
+                <?php get_template_part('template_part/blog_setup') ?>
             </div>
             <div class="col-md-3">
                 <h1>This iS Sidebar</h1>

@@ -1,8 +1,8 @@
 <?php
-function wpzone_footer_customizer($wp_customize) {
+function creativezone_footer_customizer($wp_customize) {
     // Add Footer Section
     $wp_customize->add_section('footer_section', [
-        'title'    => __('Footer Settings', 'wpzone'),
+        'title'    => __('Footer Settings', 'creativezone'),
         'priority' => 120,
     ]);
 
@@ -14,7 +14,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_background_color', [
-        'label'    => __('Footer Background Color', 'wpzone'),
+        'label'    => __('Footer Background Color', 'creativezone'),
         'section'  => 'footer_section',
         'settings' => 'footer_background_color',
     ]));
@@ -27,7 +27,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_text_color', [
-        'label'    => __('Footer Text Color', 'wpzone'),
+        'label'    => __('Footer Text Color', 'creativezone'),
         'section'  => 'footer_section',
         'settings' => 'footer_text_color',
     ]));
@@ -40,27 +40,27 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('footer_bottom_background_color', [
-        'label'    => __('Footer Bottom Background Color', 'wpzone'),
+        'label'    => __('Footer Bottom Background Color', 'creativezone'),
         'section'  => 'footer_section',
         'type'     => 'text',
-        'description' => __('Use CSS color values like: rgba(0, 0, 0, 0.2) or #000000', 'wpzone'),
+        'description' => __('Use CSS color values like: rgba(0, 0, 0, 0.2) or #000000', 'creativezone'),
     ]);
     
     // Footer Widgets Layout
     $wp_customize->add_setting('footer_widgets_layout', [
         'default'           => '4',
-        'sanitize_callback' => 'wpzone_sanitize_footer_layout',
+        'sanitize_callback' => 'creativezone_sanitize_footer_layout',
     ]);
     
     $wp_customize->add_control('footer_widgets_layout', [
-        'label'    => __('Footer Widgets Layout', 'wpzone'),
+        'label'    => __('Footer Widgets Layout', 'creativezone'),
         'section'  => 'footer_section',
         'type'     => 'select',
         'choices'  => [
-            '1' => __('1 Column', 'wpzone'),
-            '2' => __('2 Columns', 'wpzone'),
-            '3' => __('3 Columns', 'wpzone'),
-            '4' => __('4 Columns', 'wpzone'),
+            '1' => __('1 Column', 'creativezone'),
+            '2' => __('2 Columns', 'creativezone'),
+            '3' => __('3 Columns', 'creativezone'),
+            '4' => __('4 Columns', 'creativezone'),
         ],
     ]);
     
@@ -72,15 +72,15 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('footer_description', [
-        'label'    => __('Footer Description', 'wpzone'),
+        'label'    => __('Footer Description', 'creativezone'),
         'section'  => 'footer_section',
         'type'     => 'textarea',
-        'description' => __('This text appears in the footer when no widgets are active.', 'wpzone'),
+        'description' => __('This text appears in the footer when no widgets are active.', 'creativezone'),
     ]);
 
     // Social Media Section
     $wp_customize->add_section('social_media_section', [
-        'title'    => __('Social Media Links', 'wpzone'),
+        'title'    => __('Social Media Links', 'creativezone'),
         'priority' => 125,
     ]);
 
@@ -91,7 +91,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('social_facebook', [
-        'label'    => __('Facebook URL', 'wpzone'),
+        'label'    => __('Facebook URL', 'creativezone'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ]);
@@ -103,7 +103,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('social_twitter', [
-        'label'    => __('Twitter URL', 'wpzone'),
+        'label'    => __('Twitter URL', 'creativezone'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ]);
@@ -115,7 +115,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('social_instagram', [
-        'label'    => __('Instagram URL', 'wpzone'),
+        'label'    => __('Instagram URL', 'creativezone'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ]);
@@ -127,7 +127,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('social_linkedin', [
-        'label'    => __('LinkedIn URL', 'wpzone'),
+        'label'    => __('LinkedIn URL', 'creativezone'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ]);
@@ -139,14 +139,14 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('social_youtube', [
-        'label'    => __('YouTube URL', 'wpzone'),
+        'label'    => __('YouTube URL', 'creativezone'),
         'section'  => 'social_media_section',
         'type'     => 'url',
     ]);
 
     // Contact Information Section
     $wp_customize->add_section('contact_info_section', [
-        'title'    => __('Contact Information', 'wpzone'),
+        'title'    => __('Contact Information', 'creativezone'),
         'priority' => 130,
     ]);
 
@@ -157,7 +157,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('contact_address', [
-        'label'    => __('Contact Address', 'wpzone'),
+        'label'    => __('Contact Address', 'creativezone'),
         'section'  => 'contact_info_section',
         'type'     => 'text',
     ]);
@@ -169,7 +169,7 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('contact_phone', [
-        'label'    => __('Contact Phone', 'wpzone'),
+        'label'    => __('Contact Phone', 'creativezone'),
         'section'  => 'contact_info_section',
         'type'     => 'text',
     ]);
@@ -181,28 +181,28 @@ function wpzone_footer_customizer($wp_customize) {
     ]);
     
     $wp_customize->add_control('contact_email', [
-        'label'    => __('Contact Email', 'wpzone'),
+        'label'    => __('Contact Email', 'creativezone'),
         'section'  => 'contact_info_section',
         'type'     => 'email',
     ]);
     
     // Copyright Text
     $wp_customize->add_setting('footer_copyright_text', [
-        'default'           => sprintf(__('© %s %s. All Rights Reserved.', 'wpzone'), date('Y'), get_bloginfo('name')),
+        'default'           => sprintf(__('© %s %s. All Rights Reserved.', 'creativezone'), date('Y'), get_bloginfo('name')),
         'sanitize_callback' => 'wp_kses_post',
         'transport'         => 'postMessage',
     ]);
     
     $wp_customize->add_control('footer_copyright_text', [
-        'label'    => __('Copyright Text', 'wpzone'),
+        'label'    => __('Copyright Text', 'creativezone'),
         'section'  => 'footer_section',
         'type'     => 'textarea',
     ]);
 }
-add_action('customize_register', 'wpzone_footer_customizer');
+add_action('customize_register', 'creativezone_footer_customizer');
 
 // Sanitize footer layout option
-function wpzone_sanitize_footer_layout($input) {
+function creativezone_sanitize_footer_layout($input) {
     $valid = ['1', '2', '3', '4'];
     if (in_array($input, $valid)) {
         return $input;

@@ -10,7 +10,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <div class="footer-logo mb-4">
-                            <?php echo wpzone_get_logo(); ?>
+                            <?php echo creativezone_get_logo(); ?>
                         </div>
                         <p class="text-muted mb-4">
                             <?php echo get_theme_mod('footer_description', 'We are a creative team passionate about delivering exceptional digital experiences and innovative solutions for our clients.'); ?>
@@ -131,7 +131,7 @@
                 <div class="col-md-6">
                     <div class="copyright text-center text-md-start">
                         <p class="mb-0 text-muted">
-                            <?php echo wp_kses_post(get_theme_mod('footer_copyright_text', sprintf(__('© %s %s. All Rights Reserved.', 'wpzone'), date('Y'), get_bloginfo('name')))); ?>
+                            <?php echo wp_kses_post(get_theme_mod('footer_copyright_text', sprintf(__('© %s %s. All Rights Reserved.', 'creativezone'), date('Y'), get_bloginfo('name')))); ?>
                         </p>
                     </div>
                 </div>

@@ -2,14 +2,14 @@
 
 // Wordpress Shortcode
 
-function wpzone_basic_shortcode()
+function creativezone_basic_shortcode()
 {
     return 'Hello World';
 }
 
-add_shortcode('wpzone_text', 'wpzone_basic_shortcode');
+add_shortcode('creativezone_text', 'creativezone_basic_shortcode');
 
-function wpzone_button_shortcode($atts, $content = null)
+function creativezone_button_shortcode($atts, $content = null)
 {
     $value = shortcode_atts([
         'url' => '#',
@@ -17,11 +17,11 @@ function wpzone_button_shortcode($atts, $content = null)
 
     return '<a href="' . esc_url($value['url']) . '" class="btn btn-primary">' . do_shortcode($content) . '</a>';
 }
-add_shortcode('wpzone_button', 'wpzone_button_shortcode');
+add_shortcode('creativezone_button', 'creativezone_button_shortcode');
 
 // Short code for Custom Post
 
-function wpzone_service_shortcode($atts)
+function creativezone_service_shortcode($atts)
 {
     ob_start();
 
@@ -61,4 +61,4 @@ function wpzone_service_shortcode($atts)
     }
 }
 
-add_shortcode('wpzone_service', 'wpzone_service_shortcode');
+add_shortcode('creativezone_service', 'creativezone_service_shortcode');

@@ -3,15 +3,15 @@
 /**
  * Register custom post types
  *
- * @package wpzone
+ * @package creativezone
  */
 
 // Custom post types should be under Theme name in dashboard sidebar menu
 
 // first create sidebar menu item
-function wpzone_register_custom_service()
+function creativezone_register_custom_service()
 {
-    register_post_type("wpzone_service", [
+    register_post_type("creativezone_service", [
         "labels" => [
             'name'          => __('Service'),
             'singular_name' => __('Service'),
@@ -39,33 +39,33 @@ function wpzone_register_custom_service()
 
 }
 
-add_action('init', 'wpzone_register_custom_service');
+add_action('init', 'creativezone_register_custom_service');
 
 
 // Add this after your custom post type registration
-function wpzone_add_service_metabox() {
+function creativezone_add_service_metabox() {
     add_meta_box(
-        'wpzone_service_icon',
+        'creativezone_service_icon',
         __('Service Icon'),
-        'wpzone_service_icon_callback',
-        'wpzone_service',
+        'creativezone_service_icon_callback',
+        'creativezone_service',
         'side'
     );
 }
-add_action('add_meta_boxes', 'wpzone_add_service_metabox');
+add_action('add_meta_boxes', 'creativezone_add_service_metabox');
 
-function wpzone_service_icon_callback($post) {
-    wp_nonce_field('wpzone_service_icon_nonce', 'wpzone_service_icon_nonce');
+function creativezone_service_icon_callback($post) {
+    wp_nonce_field('creativezone_service_icon_nonce', 'creativezone_service_icon_nonce');
     $icon = get_post_meta($post->ID, '_service_icon', true);
     echo '<input type="text" name="service_icon" value="' . esc_attr($icon) . '" class="widefat">';
     echo '<p class="description">Enter a Dashicon class (e.g. dashicons-admin-tools)</p>';
 }
 
-function wpzone_save_service_icon($post_id) {
-    if (!isset($_POST['wpzone_service_icon_nonce'])) {
+function creativezone_save_service_icon($post_id) {
+    if (!isset($_POST['creativezone_service_icon_nonce'])) {
         return;
     }
-    if (!wp_verify_nonce($_POST['wpzone_service_icon_nonce'], 'wpzone_service_icon_nonce')) {
+    if (!wp_verify_nonce($_POST['creativezone_service_icon_nonce'], 'creativezone_service_icon_nonce')) {
         return;
     }
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
@@ -78,4 +78,4 @@ function wpzone_save_service_icon($post_id) {
         update_post_meta($post_id, '_service_icon', sanitize_text_field($_POST['service_icon']));
     }
 }
-add_action('save_post', 'wpzone_save_service_icon');
+add_action('save_post', 'creativezone_save_service_icon');

@@ -26,33 +26,38 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-widget">
                             <div class="footer-logo mb-4">
-                                <?php echo wpzone_get_logo(); ?>
+                                <?php echo creativezone_get_logo(); ?>
                             </div>
                             <p class="text-muted mb-4">
                                 <?php echo get_theme_mod('footer_description', 'We are a creative team passionate about delivering exceptional digital experiences and innovative solutions for our clients.'); ?>
                             </p>
                             <div class="social-links">
-                                <h6 class="text-white mb-3">Follow Us</h6>
+                                <h6 class="text-white mb-3"><?php _e('Follow Us', 'creativezone'); ?></h6>
                                 <div class="d-flex gap-3">
                                     <a href="<?php echo esc_url(get_theme_mod('social_facebook', '#')); ?>"
-                                        class="social-link" target="_blank" rel="noopener">
-                                        <i class="bi bi-facebook"></i>
+                                        class="social-link" target="_blank" rel="noopener"
+                                        aria-label="<?php _e('Facebook', 'creativezone'); ?>">
+                                        <i class="bi bi-facebook" aria-hidden="true"></i>
                                     </a>
                                     <a href="<?php echo esc_url(get_theme_mod('social_twitter', '#')); ?>"
-                                        class="social-link" target="_blank" rel="noopener">
-                                        <i class="bi bi-twitter"></i>
+                                        class="social-link" target="_blank" rel="noopener"
+                                        aria-label="<?php _e('Twitter', 'creativezone'); ?>">
+                                        <i class="bi bi-twitter" aria-hidden="true"></i>
                                     </a>
                                     <a href="<?php echo esc_url(get_theme_mod('social_instagram', '#')); ?>"
-                                        class="social-link" target="_blank" rel="noopener">
-                                        <i class="bi bi-instagram"></i>
+                                        class="social-link" target="_blank" rel="noopener"
+                                        aria-label="<?php _e('Instagram', 'creativezone'); ?>">
+                                        <i class="bi bi-instagram" aria-hidden="true"></i>
                                     </a>
                                     <a href="<?php echo esc_url(get_theme_mod('social_linkedin', '#')); ?>"
-                                        class="social-link" target="_blank" rel="noopener">
-                                        <i class="bi bi-linkedin"></i>
+                                        class="social-link" target="_blank" rel="noopener"
+                                        aria-label="<?php _e('LinkedIn', 'creativezone'); ?>">
+                                        <i class="bi bi-linkedin" aria-hidden="true"></i>
                                     </a>
                                     <a href="<?php echo esc_url(get_theme_mod('social_youtube', '#')); ?>"
-                                        class="social-link" target="_blank" rel="noopener">
-                                        <i class="bi bi-youtube"></i>
+                                        class="social-link" target="_blank" rel="noopener"
+                                        aria-label="<?php _e('YouTube', 'creativezone'); ?>">
+                                        <i class="bi bi-youtube" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -62,7 +67,7 @@
                     <!-- Quick Links -->
                     <div class="col-lg-2 col-md-6">
                         <div class="footer-widget">
-                            <h5 class="text-white mb-4">Quick Links</h5>
+                            <h5 class="text-white mb-4"><?php _e('Quick Links', 'creativezone'); ?></h5>
                             <?php
                                     wp_nav_menu([
                                         'theme_location' => 'footer_menu',
@@ -70,10 +75,10 @@
                                         'menu_class'     => 'footer-links list-unstyled',
                                         'fallback_cb'    => function() {
                                             echo '<ul class="footer-links list-unstyled">';
-                                            echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
-                                            echo '<li><a href="' . esc_url(home_url('/about/')) . '">About</a></li>';
-                                            echo '<li><a href="' . esc_url(home_url('/services/')) . '">Services</a></li>';
-                                            echo '<li><a href="' . esc_url(home_url('/contact/')) . '">Contact</a></li>';
+                                            echo '<li><a href="' . esc_url(home_url('/')) . '">' . __('Home', 'creativezone') . '</a></li>';
+                                            echo '<li><a href="' . esc_url(home_url('/about/')) . '">' . __('About', 'creativezone') . '</a></li>';
+                                            echo '<li><a href="' . esc_url(home_url('/services/')) . '">' . __('Services', 'creativezone') . '</a></li>';
+                                            echo '<li><a href="' . esc_url(home_url('/contact/')) . '">' . __('Contact', 'creativezone') . '</a></li>';
                                             echo '</ul>';
                                         },
                                         'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -86,14 +91,14 @@
                     <!-- Services -->
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h5 class="text-white mb-4">Our Services</h5>
+                            <h5 class="text-white mb-4"><?php _e('Our Services', 'creativezone'); ?></h5>
                             <ul class="footer-links list-unstyled">
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Mobile Apps</a></li>
-                                <li><a href="#">UI/UX Design</a></li>
-                                <li><a href="#">Digital Marketing</a></li>
-                                <li><a href="#">SEO Optimization</a></li>
+                                <li><a href="#"><?php _e('Web Design', 'creativezone'); ?></a></li>
+                                <li><a href="#"><?php _e('Web Development', 'creativezone'); ?></a></li>
+                                <li><a href="#"><?php _e('Mobile Apps', 'creativezone'); ?></a></li>
+                                <li><a href="#"><?php _e('UI/UX Design', 'creativezone'); ?></a></li>
+                                <li><a href="#"><?php _e('Digital Marketing', 'creativezone'); ?></a></li>
+                                <li><a href="#"><?php _e('SEO Optimization', 'creativezone'); ?></a></li>
                             </ul>
                         </div>
                     </div>
@@ -101,10 +106,10 @@
                     <!-- Contact Info -->
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h5 class="text-white mb-4">Contact Info</h5>
+                            <h5 class="text-white mb-4"><?php _e('Contact Info', 'creativezone'); ?></h5>
                             <div class="contact-info">
                                 <div class="contact-item d-flex align-items-start mb-3">
-                                    <i class="bi bi-geo-alt-fill text-primary me-3 mt-1"></i>
+                                    <i class="bi bi-geo-alt-fill text-primary me-3 mt-1" aria-hidden="true"></i>
                                     <div>
                                         <p class="mb-0 text-muted">
                                             <?php echo get_theme_mod('contact_address', '123 Business Street, New York, NY 10001'); ?>
@@ -112,7 +117,7 @@
                                     </div>
                                 </div>
                                 <div class="contact-item d-flex align-items-start mb-3">
-                                    <i class="bi bi-telephone-fill text-primary me-3 mt-1"></i>
+                                    <i class="bi bi-telephone-fill text-primary me-3 mt-1" aria-hidden="true"></i>
                                     <div>
                                         <p class="mb-0 text-muted">
                                             <a href="tel:<?php echo esc_attr(get_theme_mod('contact_phone', '+1 (555) 123-4567')); ?>"
@@ -123,7 +128,7 @@
                                     </div>
                                 </div>
                                 <div class="contact-item d-flex align-items-start mb-3">
-                                    <i class="bi bi-envelope-fill text-primary me-3 mt-1"></i>
+                                    <i class="bi bi-envelope-fill text-primary me-3 mt-1" aria-hidden="true"></i>
                                     <div>
                                         <p class="mb-0 text-muted">
                                             <a href="mailto:<?php echo esc_attr(get_theme_mod('contact_email', 'info@example.com')); ?>"
@@ -149,18 +154,20 @@
                     <div class="col-md-6">
                         <div class="copyright text-center text-md-start">
                             <p class="mb-0 text-muted">
-                                <?php echo wp_kses_post(get_theme_mod('footer_copyright_text', sprintf(__('© %s %s. All Rights Reserved.', 'wpzone'), date('Y'), get_bloginfo('name')))); ?>
+                                <?php echo wp_kses_post(get_theme_mod('footer_copyright_text', sprintf(__('© %s %s. All Rights Reserved.', 'creativezone'), date('Y'), get_bloginfo('name')))); ?>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-bottom-links text-center text-md-end">
+                            <?php if (get_privacy_policy_url()) : ?>
                             <a href="<?php echo esc_url(get_privacy_policy_url()); ?>"
-                                class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                                class="text-muted text-decoration-none me-3"><?php _e('Privacy Policy', 'creativezone'); ?></a>
+                            <?php endif; ?>
                             <a href="<?php echo esc_url(home_url('/terms/')) ?>"
-                                class="text-muted text-decoration-none me-3">Terms of Service</a>
+                                class="text-muted text-decoration-none me-3"><?php _e('Terms of Service', 'creativezone'); ?></a>
                             <a href="<?php echo esc_url(home_url('/sitemap/')) ?>"
-                                class="text-muted text-decoration-none">Sitemap</a>
+                                class="text-muted text-decoration-none"><?php _e('Sitemap', 'creativezone'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -170,8 +177,8 @@
     <!-- Footer End -->
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="bi bi-arrow-up"></i>
+    <button class="back-to-top" id="backToTop" aria-label="<?php _e('Back to top', 'creativezone'); ?>">
+        <i class="bi bi-arrow-up" aria-hidden="true"></i>
     </button>
 
     <?php wp_footer(); ?>

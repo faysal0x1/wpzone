@@ -1,18 +1,8 @@
-# Compiled CSS files
-css/bootstrap-custom.css
-css/bootstrap-custom.css.map
-
-# Node modules
+# Development files
 node_modules/
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+.sass-cache/
+*.map
+*.log
 
 # IDE files
 .vscode/
@@ -20,8 +10,41 @@ Thumbs.db
 *.swp
 *.swo
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log* 
+# OS files
+.DS_Store
+Thumbs.db
+
+# WordPress specific
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/mu-plugins/
+wp-content/wp-cache-config.php
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+*.tmp
+*.temp
+
+# Compiled CSS (if using build process)
+# css/style.css
+
+# Package files
+*.zip
+*.tar.gz
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db 

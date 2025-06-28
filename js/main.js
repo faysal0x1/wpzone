@@ -1,4 +1,4 @@
-// Main JavaScript for WPZone Theme
+// Main JavaScript for CreativeZone Theme
 document.addEventListener('DOMContentLoaded', function () {
 
     // Header scroll effect
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    console.log('WPZone Theme JavaScript loaded successfully!');
+    console.log('CreativeZone Theme JavaScript loaded successfully!');
 });
 
 

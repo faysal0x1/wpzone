@@ -1,38 +1,54 @@
 <?php
-$services = new WP_Query([
-    'post_type' => 'wpzone_service',
+/**
+ * Services Section Template
+ * 
+ * @package creativezone
+ */
+
+// This template is for demonstration purposes only
+// In a real implementation, you would use regular posts or pages
+// Custom post types should be implemented via plugins for WordPress.org themes
+
+$services_query = new WP_Query([
+    'post_type'      => 'post',
     'posts_per_page' => 3,
-    'order' => 'ASC'
+    'category_name'  => 'services', // Use a regular category instead
+    'order'          => 'ASC',
+    'orderby'        => 'title',
 ]);
 
-if ($services->have_posts()) :
-?>
-<section id="service_area" class="service-section">
+if ($services_query->have_posts()) : ?>
+<section id="services_area" class="py-5">
     <div class="container">
         <div class="row">
-            <?php while ($services->have_posts()) : $services->the_post(); ?>
-                <div class="col-md-4">
-                  <div class="service-card">
-                        <?php $icon = get_post_meta(get_the_ID(), '_service_icon', true); ?>
-                        <?php if ($icon) : ?>
-                            <div class="service-icon">
-                                <span class="dashicons <?php echo esc_attr($icon); ?>"></span>
-                            </div>
-                        <?php endif; ?>
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="service-thumbnail">
-                                <?php the_post_thumbnail('medium'); ?>
-                            </div>
-                        <?php endif; ?>
-                        <h3 class="service-title"><?php the_title(); ?></h3>
-                        <div class="service-excerpt">
-                            <?php the_excerpt(); ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="service-link">Read More</a>
+            <div class="col-12 text-center mb-5">
+                <h2><?php _e('Our Services', 'creativezone'); ?></h2>
+                <p class="lead"><?php _e('What we can do for you', 'creativezone'); ?></p>
+            </div>
+        </div>
+        <div class="row">
+            <?php while ($services_query->have_posts()) : $services_query->the_post(); ?>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <?php if (has_post_thumbnail()) : ?>
+                    <div class="card-img-top">
+                        <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
+                    </div>
+                    <?php endif; ?>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php the_title(); ?></h5>
+                        <p class="card-text"><?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">
+                            <?php _e('Learn More', 'creativezone'); ?>
+                        </a>
                     </div>
                 </div>
-            <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>
-<?php endif; ?>
+<?php 
+endif;
+wp_reset_postdata();
+?>

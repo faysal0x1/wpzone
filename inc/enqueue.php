@@ -3,15 +3,15 @@
 /**
  * Enqueue styles and scripts for the theme
  *
- * @package wpzone
+ * @package creativezone
  */
 
 // Theme Css and Jquery Js file calling
 
-function wp_zone_css_js_file_calling()
+function creativezone_scripts()
 {
     // Enqueue Styles
-    wp_enqueue_style('wpzone-style', get_stylesheet_uri());
+    wp_enqueue_style('creativezone-style', get_stylesheet_uri());
     
     // Custom Bootstrap CSS (compiled from SCSS)
     wp_register_style('bootstrap-custom', get_template_directory_uri()
@@ -46,4 +46,4 @@ function wp_zone_css_js_file_calling()
     wp_enqueue_script('customizer-js');
 
 }
-add_action('wp_enqueue_scripts', 'wp_zone_css_js_file_calling');
+add_action('wp_enqueue_scripts', 'creativezone_scripts');
