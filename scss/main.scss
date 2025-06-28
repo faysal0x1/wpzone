@@ -15,6 +15,8 @@
 @use "theme/pages" as *;
 @use "theme/components" as *;
 
+@use "theme/services" as *;
+
 // Custom theme styles
 body {
   font-family: themeVars.$font-family-base;
