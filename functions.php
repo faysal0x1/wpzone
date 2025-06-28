@@ -70,6 +70,8 @@ require_once get_template_directory() . '/inc/customizer.php';
 
 require_once get_template_directory() . '/inc/custom_post.php';
 
+require_once get_template_directory() . '/inc/shortcode.php';
+
 function wpzone_footer_layout_body_class($classes)
 {
     $layout    = get_theme_mod('footer_widgets_layout', '4');
