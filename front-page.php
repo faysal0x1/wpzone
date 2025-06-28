@@ -1,36 +1,40 @@
 <?php
-/*
- * Theme Front Page 
-*/
+/* * Template Name: Archive Page
+ * Description: A custom template for the archive page.
+ * */
+
+get_header();
+?>
 
 
-get_header(); ?>
+<!-- Body Area --->
 
-  <section id="service_area">
+<section id="body-area">
     <div class="container">
-      <div class="row">
-        <?php 
-        query_posts('post_type=service&post_status=publish&posts_per_page=3&order=ASC&paged='. get_query_var('post')); 
+        <div class="row">
+            <div class="col-md-8">
 
-        if(have_posts()) :
-          while(have_posts()) : the_post(); 
-        ?>
-        <div class="col-md-4">
-          <div class="child_service">
-          <h2><?php the_title(); ?></h2>
-          <?php echo the_post_thumbnail('service') ?>
-          <?php the_excerpt(  ); ?>
-          </div>
+
+                <?php get_template_part('template_part/blog_setup') ?>
+            </div>
+            <div class="col-md-3">
+                <h1>This iS Sidebar</h1>
+                <?php  get_sidebar();?>
+            </div>
         </div>
-
-        <?php 
-          endwhile;
-          endif;
-        ?>
-      </div>
     </div>
-  </section>
+</section>
+
+<!-- Body Area End --->
 
 
+<!-- Footer Start -->
 
 <?php get_footer(); ?>
+<!-- Footer End -->
+
+
+<?php wp_footer(); ?>
+</body>
+
+</html>
